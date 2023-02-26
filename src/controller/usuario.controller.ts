@@ -26,7 +26,7 @@ export class UserController {
     }
   }
 
-  public createUser(req: Request, res: Response) {
+  public create(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
       const newUser = new User(email, password);
