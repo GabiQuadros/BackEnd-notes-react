@@ -29,7 +29,7 @@ export class UserController {
   public create(req: Request, res: Response) {
     try {
       const { email, password } = req.body;
-      const newUser = new User(email, password);
+      const user = new User(email, password);
       const dataBase = new UserDataBase();
       if (email === "" || password === "") {
         return res.status(404).send({
@@ -43,11 +43,11 @@ export class UserController {
           message: " A senha precisa de pelo menos 5 digitos",
         });
       }
-      dataBase.create(newUser);
+      dataBase.create(user);
       return res.status(200).send({
         ok: true,
         message: "O usuário foi criado com sucesso",
-        data: newUser.toJson(),
+        data: user.toJson(),
       });
     } catch (error: any) {
       return res.status(500).send({

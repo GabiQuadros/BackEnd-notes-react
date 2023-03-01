@@ -1,7 +1,5 @@
 import { Router } from "express";
 import { NoteController } from "../controller/notes.controller";
-import { UserController } from "../controller/usuario.controller";
-import { LoginValidatorMiddleware } from "../middlewares/login.validator.middleware";
 
 export const notesRoutes = () => {
   const app = Router();

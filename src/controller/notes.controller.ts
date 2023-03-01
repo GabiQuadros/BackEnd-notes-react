@@ -30,7 +30,7 @@ export class NoteController {
 
       res.status(200).send({
         ok: true,
-        message: "Lista de Usuarios",
+        message: "Lista de Recados",
         data: noteList,
       });
     } catch (error: any) {
@@ -49,7 +49,7 @@ export class NoteController {
       if (!desc || !det) {
         return res.status(400).send({
           ok: false,
-          message: "Note was not provided",
+          message: "Notes ware not provided",
         });
       }
       if (!user) {
